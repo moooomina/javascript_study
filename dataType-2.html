@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입-2</title>
+</head>
+<body>
+    
+    <script>
+        let a = 1;
+        let b = '1';
+        let c;
+        console.log('a 변수의 값은 '+a);
+        console.log(`a 변수의 값은 ${a}`)
+        //a 변수의 데이터타입은 ooo, b 데이터타입은 ooo, c 데이터타입은 ooo
+        console.log(`a 변수의 데이터타입은 ${typeof a}, b데이터타입은 ${typeof b}, c데이터타입은 ${typeof (c)}`);
+        //a+b 변수를 묶은 데이터타입은 ooo
+        console.log(`a+b 변수를 묶은 데이터타입은 ${typeof(a+b)}`);
+        //b+c 변수를 묶은 데이터타입은 ooo
+        console.log(`b+c 변수를 묶은 데이터타입은 ${typeof(b+c)}`);
+        console.log('--------------------')
+        //오늘의 총 지출을 표시해주는 가계부앱 만들기
+        //커피 1500원
+        //도시락 6000원
+        //전철 2000원
+        //오늘 총 지출액은 000원 입니다.
+        let coffee = 1500;
+        let lunch = 6000;
+        let subway = 2000;
+        let total = coffee+lunch+subway //토탈 변수값을 미리 생성해놓는게 더 편리함!
+        console.log(`오늘의 총 지출액은 ${coffee+lunch+subway}원 입니다.`);
+        console.log(`오늘의 총 지출액은 ${total}원 입니다.`);
+        console.log('-----------------------')
+        //구구단 만들기
+        let dan99 = 2;
+        console.log(`${dan99}X1=${dan99*1}`)
+        console.log(`${dan99}X2=${dan99*2}`)
+        console.log(`${dan99}X3=${dan99*3}`)
+        console.log(`${dan99}X4=${dan99*4}`)
+        console.log(`${dan99}X5=${dan99*5}`)
+        console.log(`${dan99}X6=${dan99*6}`)
+        console.log(`${dan99}X7=${dan99*7}`)
+        console.log(`${dan99}X8=${dan99*8}`)
+        console.log(`${dan99}X9=${dan99*9}`)
+        console.log('------------------------')
+        //월(Month) 체크하기!
+        let now = new Date(); //년월일시
+        console.log(now);
+
+        let mon = now.getMonth()+1;
+        let day = now.getDate();
+        let ye = now.getFullYear();
+        console.log(mon, day, ye);
+        //getMonth 시작 월을 0 부터 시작한다. -> 꼭 +1해줘야 함
+        //오늘은 몇월 몇일입니다.
+        console.log(`오늘은 ${mon}월 ${day}일 입니다.`)
+        console.log(`오늘은 ${now.getMonth()+1}월 ${now.getDate()}일 입니다.`)
+        //배열
+        //배열을 사용하지 않았을 때(같은 주제 기준 데이터가 2개 이상)
+        let color1 = 'red'
+        let color2 = 'blue'
+        console.log(color1, color2);
+
+        //배열을 사용한 경우
+        //배열의 인덱스(자바스크립트 데이터 순서)는 0부터 시작한다.
+        //배열의 length 문자열길이(개수)는 1부터 시작한다.
+        let colorSet = new Array('red','blue');
+        // let colorSet = ['red','blue','yellow','white']
+        // let colorSet = new Array(4)
+        console.log(colorSet);
+        console.log(colorSet[0]); //배열[호출인덱스]
+        console.log(colorSet[1]);
+        console.log('---------------------')
+        //배열 기초 연습
+        /* 1. 흰색, 검은색, 초록색, 노랑색, 파랑색, 빨강색, 보라색을 배열로 저장하고 그 중 좋아하는 색상을 4개 골라서 콘솔에 출력하세요. */
+        let colors = new Array('white','black','green','yellow','blue','red','purple');
+        console.log(colors[1], colors[2], colors[3], colors[6]);
+        // 2. fruitList 변수생성
+        // 좋아하는 과일을 5개 저장하고 역순으로 출력하기
+        let fruitList = ['메론','복숭아','딸기','참외','수박']
+        console.log(fruitList[4])
+        console.log(fruitList[3])
+        console.log(fruitList[2])
+        console.log(fruitList[1])
+        console.log(fruitList[0])
+    </script>
+</body>
+</html>

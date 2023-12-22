@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터타입-1</title>
+</head>
+<body>
+    
+    <script>
+        let a = 10;
+        let b = 5;
+        console.log(a)
+        console.log(typeof a); //string(문자열) number(숫자)
+        console.log(typeof(a));
+        console.log(typeof a+b); //괄호를 쓰지 않으면 두개 이상의 데이터를 썼을때 앞에 값만 인식하므로
+        console.log(typeof (a+b)); //두개 이상의 데이터를 쓰면 괄호를 꼭 넣어줘야 한다.
+        console.log(typeof(10*5)); //변수의 값과 동일한 데이터를 사용할때에는 꼭 변수를 사용해야한다.
+        console.log(typeof(a*b)); //변수의 값이 변경될 수 있으므로
+        console.log(typeof b, a); //데이터를 나눠서 따로 처리 (b만 데이터 타입을 확인하고 a는 출력)
+        console.log(typeof a, typeof b) //한 번에 따로 데이터 타입을 확인하는 방법
+        //a의 데이터 타입은 000이다.
+        //b의 데이터 타입은 000이다.
+        console.log('a의 데이터 타입은 '+typeof(a)+'이다.')
+        console.log('b의 데이터 타입은 '+typeof(b)+'이다.')
+        console.log('-------------------------')
+        let c = 'javascript';
+        let d = '3.14';
+        console.log(typeof c);
+        console.log(typeof d);
+        console.log(typeof (a+d)); //숫자와 문자를 계산할 수 없으므로 문자로 처리됨
+        //숫자+문자 = 문자
+        //숫자+숫자 = 숫자
+        //문자+문자 = 문자
+        //숫자+숫자+문자 = 문자
+        console.log(1+'1');
+        console.log(typeof (1+'1'));
+        console.log('-------------------------')
+        let e = ''; //빈 문자열
+        let f
+        console.log(typeof e); //string
+        console.log(typeof f); //undefined (정의(대입x)하지 않음)
+        // console.log(typeof g); //undefined (존재하지 않음)
+        // console.log(g); //데이터가 없으므로 error
+        // undfined(정의하지 않음) null(값이 존재하지 않는다, 비어있다)
+        let g = 1;
+        console.log(g+a); //11
+        console.log(g-b); //-4
+        g = 0; //숫자를 초기화 할때는 0을 대입해준다.
+        g = null; //존재하는 변수 값을 제거해야할 때 사용
+        console.log(typeof g); //object
+        console.log(g); //null
+
+        console.log(typeof (a+null)); //null은 값이 없기 때문에 a만 인식해서 number
+        console.log(typeof (b+undefined)); //undefined도 정의 되지 않은 값이기 때문에 b만 확인해서 number
+
+        //var, let, const 데이터타입은? NO
+        //var, let, const로 생성된 변수에 대입되는 값에 따라 데이터가 결정된다.
+        //변수를 생성하는 변수선언키워드일뿐이다!
+
+    </script>
+</body>
+</html>
