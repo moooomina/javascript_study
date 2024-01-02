@@ -90,3 +90,28 @@ console.log(아이디이름);
 3. 예약페이지의 여행 인원 수 등등...
 * 주의사항 -> value속성은 form전용이므로 다른 태그일때 해당 값을 알고 싶다면 다른 속성 및 메서드를 사용해야 한다.
 * 주의사항 -> `DOM.value`로 값 처리 시 숫자를 쓰더라도 문자열(string)으로 인식하기 때문에 필요한 경우 `Number()` 메서드를 활용해 (Number)데이터타입으로 변환해야 한다. ex `Number(객체.value())`
+
+## event
+이벤트란? 사용자의 특정 동작에 따라 결과를 실행하는 행위
+**이벤트 핸들러 종류**
+- mouseover / mouseenter 마우스가 요소에 올라갔을 때
+- mouseout / mouseleave 마우스가 요소에 올라간 후 나갔을 때
+- mousemove 마우스가 요소 위에서 움직였을 때
+- mousedown 마우스로 요소를 눌렀을 때(마우스 이벤트 1단계)
+- mouseup 마우스로 요소를 누르고 떼었을 때(마우스 이벤트 2단계)
+- click 클릭했을 때(마우스 이벤트 3단계 mousedown -> mouseup을 연달아 실행가능)
+- onfocus 폼 요소가 활성화되었을 때
+- onload 문서를 읽었을 때
+- ondblclick 마우스로 더블클릭 했을때
+- onkeydown 키보드 키 눌렀을 때
+- onkeypress 키보드 키 누르고 떼었을 때
+- onkeyup 키보드 키 누르고 떼었을때(2단계)
+- onchange input 요소의 값이 변경되었을 때
+- onblur input요소가 커서를 잃었을 때
+- onfocus input요소에 커서가 들어갔을 때
+- onselect 텍스트 필드 등의 텍스트를 선택했을 때
+- onsubmit 폼 제출버튼을 눌렀을 때
+- onunloadWeb 웹페이지가 다른 페이지로 전환될 때
+- onabort 페이지나 이미지의 로딩이 중단되었을 때
+- onerror 페이지나 이미지를 로딩 중 에러가 발생했을 때
+- onresize HTML요소의 크기가 변경되었을 때
