@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        #chat {
+            background:lavenderblush; border-radius:10px;
+            width:400px; margin:100px auto 0; padding:20px;
+        }
+        #chat .chat_list {
+            background-color:#fff; height:500px;
+            display:flex; flex-flow:column nowrap;
+            justify-content:flex-end; overflow-y:auto;
+            /* flex-direction:column-reverse; */
+        }
+        /* js 동적으로 추가된 ul-li (html파일엔 없음) */
+        #chat .chat_list ul {}
+        #chat .chat_list ul li {
+            background-color:lavenderblush;
+            width:max-content; padding:10px;
+            margin:20px; border-radius:10px;
+        }
+        /* 보내기 버튼 */
+        #chat .chat_send {
+            padding:10px 0;
+            display:flex; justify-content:space-between;
+        }
+        #chat .chat_send #chat_txt {
+            border:0; outline:none;
+            width:300px; padding:10px;
+        }
+        #chat .chat_send #send_btn {
+            border:0; color:#fff; background:lightcoral;
+            cursor:pointer; /* 마우스 올렸을 때 손가락 모양으로 변하는 효과 */ font-size:0.85rem; padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat">
+        <div class="chat_list"></div>
+        <div class="chat_send">
+            <input type="text" id="chat_txt" placeholder="여기에 입력하세요">
+            <button type="button" id="send_btn">보내기</button>
+        </div>
+    </div>
+    <script src="./script/chat.js"></script>
+</body>
+</html>
