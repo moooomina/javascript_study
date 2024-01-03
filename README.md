@@ -115,3 +115,22 @@ console.log(아이디이름);
 - onabort 페이지나 이미지의 로딩이 중단되었을 때
 - onerror 페이지나 이미지를 로딩 중 에러가 발생했을 때
 - onresize HTML요소의 크기가 변경되었을 때
+
+### DOM 관계속성
+1. parentNode 부모 노드, parentElement 부모 요소
+- parentNode.parentNode 연속 사용 (부모의 부모 잡기)
+- 자식 또는 자손노드.parentElement (특정 자식의 부모 잡기)
+2. javascript에서 css 제어하기 -> style 속성
+- `DOM.관계.style = "속성:값; 속성:값; 속성:값;";` -> style 2번 이상 생성 시 이전 속성:값 제거됨
+- `DOM.관계.관계.style.속성 = "값";` -> style 2번 이상 생성 시 기존 속성값에 이어서 추가됨
+- `DOM.style.속성 = "값";`
+- 위 관계는 필요에 따라 선택 속성
+3. 자식노드제어하기
+- childNodes, children, childElementCount
+3-1. firstChild 첫번째 자식, firstElementChild 첫번째 자식 노드
+    lastChild 마지막 자식, lastElementChild 마지막 자식 노드
+    `Element`가 들어가면 요소만 잡는 속성
+3-2. previousSibling, previousElementSibling 이전 형제
+    nextSibling, nextElementSibling 다음 형제
+    `Element`가 들어가면 요소만 잡는 속성
+    안들어가면 공백, 텍스트, 요소 전부 잡는다.
