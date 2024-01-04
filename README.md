@@ -134,3 +134,26 @@ console.log(아이디이름);
     nextSibling, nextElementSibling 다음 형제
     `Element`가 들어가면 요소만 잡는 속성
     안들어가면 공백, 텍스트, 요소 전부 잡는다.
+
+# innerHTML
+* `객체.innerHTML;` 특정 객체의 자식, 자손 HTML 읽기
+* `객체.innerHTML = 값;` HTML 삽입 및 변경
+# innerText
+* `객체.innerText` 특정 객체의 자식, 자손 텍스트노드 읽기(HTML X)
+* `객체.innerText = 값;` 텍스트 노드 삽입 및 변경 (HTML X)
+# appendChild
+* `객체.appendChild()`
+* `객체.객체.appendChild()`
+* `객체.속성.appendChild()`
+* `객체.속성.속성.appendChild()`
+* 객체의 마지막 자식 노드 위치에 `(삽입Node)` 괄호 안 값 추가
+# insertBefore
+* `객체.insertBefore()`
+* 객체의 첫번째 자식 노드 위치에 `(삽입Node, 부모.firstChild)` 괄호 안 값 추가
+# createElement
+* `document.createElement()`
+* 요소 노드 자바스크립트 내에서 동적인 용도로 생성할 경우 사용 (태그추가)
+# remove
+* 요소 노드 제거하기 remove, removeChild()
+* 요소.remove() -> 요소를 제거한다.
+* 요소.removeChild() -> 요소 안 () 괄호에 있는 자식노드를 제거한다. -- 좀 더 디테일하게 노드를 잡을 수 있다.
