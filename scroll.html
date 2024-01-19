@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+    <style>
+        html,body,.bg {scroll-behavior:smooth;}
+        * {margin:0; padding:0; box-sizing:border-box;}
+        .bg {height:100vh;}
+        .bg1 {background-color:lightcoral; width:100%; overflow-x:auto; overflow-y:hidden;}
+        .bg2 {background-color:lightpink;}
+        .bg3 {background-color:lightgreen;}
+        .bg4 {background-color:lightblue;}
+        #btn {
+            position:fixed; left:50px; top:50px; z-index:999; padding:20px;
+            background-color:hotpink; color:#fff;
+            border:none; border-radius:50px; cursor:pointer;
+        }
+        /* ====================가로 스크롤 bg1-wrap */
+        .bg1 button {position:fixed; top:40%; transform:scale(2);}
+        .bg1 #prev {left:50px; padding:0 10px 3px; background-color:lightgreen; color:#fff; border:none; border-radius:5px; cursor:pointer;}
+        .bg1 #next {right:50px; padding:0 10px 3px; background-color:lightskyblue; color:#fff; border:none; border-radius:5px; cursor:pointer;}
+        .bg1 .wrap {width:max-content; display:flex;}
+        .bg1 .wrap .box {width:1400px; height:100vh;}
+        .bg1 .wrap .a {background:lightgoldenrodyellow;}
+        .bg1 .wrap .b {background:lightsalmon;}
+        .bg1 .wrap .c {background:lightpink;}
+        .bg1 .wrap .d {background:lightcoral;}
+        /*  */
+        #top {
+            z-index:999; position:fixed; bottom:50px; right:50px; padding:20px;
+            background-color:coral; color:#fff;
+            border:none; border-radius:50px; cursor:pointer;
+        }
+        /*  */
+        header {position:fixed; left:0; top:0; width:100%;}
+        header h1 {height:50px; background:lightblue;}
+        header nav {height:30px; background:lightcyan;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>로고</h1>
+        <nav>내비게이션</nav>
+    </header>
+    <button type="button" id="top">위로</button>
+    <button type="button" id="btn">버튼</button>
+    <div class="bg bg1">
+        <button type="button" id="prev">⬅</button>
+        <button type="button" id="next">➡</button>
+        <div class="wrap">
+            <div class="box a"></div>
+            <div class="box b"></div>
+            <div class="box c"></div>
+            <div class="box d"></div>
+        </div>
+    </div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="bg bg4"></div>
+    <!-- <script src="./script/scroll-1.js"></script> -->
+    <script src="./script/scroll-2.js"></script>
+</body>
+</html>
