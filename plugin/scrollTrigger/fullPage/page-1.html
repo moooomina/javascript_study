@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page-1</title>
+    <link rel="stylesheet" href="./jquery.fullPage.css">
+    <style>
+        .wrap {}
+        .wrap .container {}
+        .wrap .container:nth-child(1) {background-color:lavender;}
+        .wrap .container:nth-child(2) {background-color:lavenderblush;}
+        .wrap .container:nth-child(3) {height:500px !important; background-color:papayawhip;}
+        .wrap .container:nth-child(4) {background-color:peachpuff;}
+        nav {position:fixed; left:50px; top:50px; z-index:999;}
+        nav a {}
+        /* keyframes */
+        .bg {animation:bg 2s ease both;}
+        @keyframes bg {
+            0% {transform:translateX(0);}
+            100% {transform:translateX(200px);}
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#a">a</a>
+        <a href="#b">b</a>
+        <a href="#c">c</a>
+        <a href="#d">d</a>
+    </nav>
+    <div class="wrap">
+        <div class="container section s1">1</div>
+        <div class="container section s2">2</div>
+        <div class="container section s3 fp-auto-height">3</div>
+        <div class="container section s4">4</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./jquery.fullPage.js"></script>
+    <script>
+        $('.wrap').fullpage({
+            //속성:값, 속성:값,
+            scrollBar:true, //스크롤바 표시하기 (기본값 false)
+            scrollingSpeed:500, //스크롤바 선환속도 (기본값 1000)
+            navigation:true, //우측 내이게이션 표시하기(기본값 false)
+            navigationTooltips:['아무말','제목','내용','가나다'], //내비게이션에 마우스 올리면 제목 표시
+            showActiveTooltip:true, //자동으로 제목 표시(기본값 false)
+
+            menu:'nav', //상단 메뉴 클릭시 해당 메뉴 위치로 이동
+            anchors:['a','b','c','d'], //메뉴a #이름과 일치시킨 이름작성 
+            //menu,anchors 속성은 세트이므로 꼭 둘이 같이 써야한다.
+            //<a href="#a"> 샵 뒤에 a와 anchors ['a'] 일치해야한다. 이름은 자유
+            //<a href="#title">이면 anchors['title']
+
+            //스크롤 애니메이션 등장이 필요할 경우
+            //제이쿼리는 화살표함수가 불가능 하기 때문에 모두 function 사용
+            //매개변수 index(현재 인덱스), nextIndex(다음 인덱스), direction(화면 방향)은 이름 지정 자유 (i,n,d 등 줄여서 사용추천)
+            /* onLeave:function(index, nextIndex, direction){
+                console.log(index, nextIndex, direction) //확인
+                if(index == 1){ //인덱스가 1과 같으면 (인덱스1은 두번째 section을 뜻)
+                    //디자인 변경하기
+                    $('.s2').css('background-color','lightblue') //제이쿼리 css
+                    $('.s2').get(0).style.border = '5px solid black' //자바스크립트 css
+                }
+                if(index == 2){
+                    $('.s3').get(0).classList.add('bg')
+                }else{
+                    $('.s3').get(0).classList.remove('bg')
+                }
+            } */
+            //anchors 명칭과 함께하는 fullpage 위치 인식 함수
+            //현재 anchors 명칭은 a,b,c,d
+            afterLoad:function(anchor, index){ //매개변수명칭은 자유 지정
+                console.log(anchor, index) //확인
+                if(anchor == 'b'){ //앵커의 위치가 b와 같으면
+                    $('.s2').get(0).classList.add('bg')
+                }else{
+                    $('.s2').get(0).classList.remove('bg')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
