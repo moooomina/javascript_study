@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math-1</title>
+</head>
+<body>
+    <input type="text" name="txt" id="txt">
+    <input type="number" name="num" id="num" value="1">
+    <button type="button" id="btn">click</button>
+    <p class="result"></p>
+    <script src="./data.js"></script>
+    <script>
+
+        const txt = document.querySelector('#txt')
+        const num = document.querySelector('#num')
+        const btn = document.querySelector('#btn')
+        const result = document.querySelector('.result')
+        let min_result
+        
+        console.log(txt, num, btn)
+
+        btn.addEventListener('click',()=>{
+            //data에서 가장 작은 금액을 보이게 하기
+            min_result = Math.min(data[0].price, data[1].price, data[2].price)
+            for(let i of data){
+                if(i.price == min_result){
+                    result.innerHTML = i.name + i.price + '원'
+                }
+            }
+            //data에서 가장 큰 금액을 보이게 하기
+            min_result = Math.max(data[0].price, data[1].price, data[2].price) //min을 max로 변경
+            for(let i of data){
+                if(i.price == min_result){
+                    result.innerHTML = i.name + i.price + '원'
+                }
+            }
+
+
+            //min(): 넣은 데이터의 값 중에 가장 작은 수를 출력해주는 메서드
+            // txt.value = Math.min(1, 10, -100)
+            // num.value = Math.min(1,2,3,4,5)
+
+            //abs(): 음수값을 양수값으로 변경해줌(-만 삭제 숫자는 동일)
+            // txt.value = Math.abs(-1.5)
+            // num.value = Math.abs(-10)
+
+            //round(): 5기준으로 소수점 값이 5보다 작으면 작은 정수로 크면 큰 정수로 변환해주는 메서드
+            // txt.value = Math.round(123.456)
+            // num.value = Math.round(1.2)
+
+            //ceil: 무조건 위로 반올림 해주는 메서드
+            // txt.value = Math.ceil(123.456)
+            // num.value = Math.ceil(1.2)
+
+            //버튼을 클릭할때마다 랜덤으로 숫자가 나오고싶으면?
+            // txt.value = Math.floor(Math.random()) //하지만 이렇게 적으면 random이 소수점이라 항상 값이 0이됨
+            // num.value = Math.floor(Math.random())
+            // txt.value = Math.floor(Math.random()*5) //이렇게 뒤에 곱하기를 해주면 랜덤으로 나오는걸 볼 수 있음
+            // num.value = Math.floor(Math.random()*10)
+
+            //floor(): ()안에 값을 소수점 버리고 정수로 변환해주는 메서드
+            // txt.value = Math.floor(1.6) //1
+            // num.value = Math.floor(0.1) //0
+
+            //random(): 0-1사이 값을 랜덤으로 반환해서 보여줌
+            // txt.value = Math.random() //계속 누르면 계속 랜덤으로 새로운 값이 나옴
+            // num.value = Math.random() //소수점으로 나옴
+        
+            //PI: 파이값을 보여주는 메서드 = 3.141592...
+            // txt.value = Math.PI //파이값=3.141592...
+            // num.value = Math.PI
+        })
+
+    </script>
+</body>
+</html>
